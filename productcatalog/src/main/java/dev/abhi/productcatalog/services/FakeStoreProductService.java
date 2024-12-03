@@ -30,10 +30,6 @@ public class FakeStoreProductService implements ProductService{
 
     @Override
     public GenericProductDto getProductByID(Long id) {
-
-        //    @Value("${request.url}")
-        //    private String url;
-
         RestTemplate restTemplate = restTemplateBuilder.build() ;
         String requestUrl = baseRequestUrl + "{id}";
 
@@ -42,19 +38,10 @@ public class FakeStoreProductService implements ProductService{
 
         FakeStoreProductDto fakeStoreProductDto = response.getBody() ;
 
-        GenericProductDto genericProductDto = new GenericProductDto() ;
-
-        //assert fakeStoreProductDto != null;
-        genericProductDto.setCategory(fakeStoreProductDto.getCategory());
-        genericProductDto.setId(fakeStoreProductDto.getId());
-        genericProductDto.setPrice(fakeStoreProductDto.getPrice());
-        genericProductDto.setTitle(fakeStoreProductDto.getTitle());
-        genericProductDto.setImage(fakeStoreProductDto.getImage());
-        genericProductDto.setDescription(fakeStoreProductDto.getDescription());
-
-        return genericProductDto ;
-
+        return convertToGenericProductDto(fakeStoreProductDto) ;
     }
+
+
 
     @Override
     public GenericProductDto createProduct(GenericProductDto genericProductDto) {
@@ -78,18 +65,30 @@ public class FakeStoreProductService implements ProductService{
         List<GenericProductDto> genericProductDtoList = new ArrayList<>();
 
         for(FakeStoreProductDto fakeStoreProductDto : response.getBody()){
-
-            GenericProductDto genericProductDto = new GenericProductDto() ;
-            genericProductDto.setImage(fakeStoreProductDto.getImage());
-            genericProductDto.setId(fakeStoreProductDto.getId());
-            genericProductDto.setCategory(fakeStoreProductDto.getCategory());
-            genericProductDto.setPrice(fakeStoreProductDto.getPrice());
-            genericProductDto.setDescription(fakeStoreProductDto.getDescription());
-            genericProductDto.setTitle(fakeStoreProductDto.getTitle());
-
-            genericProductDtoList.add(genericProductDto) ;
-
+            genericProductDtoList.add(convertToGenericProductDto(fakeStoreProductDto));
         }
         return genericProductDtoList ;
     }
+
+    @Override
+    public GenericProductDto deleteProductById(long id) {
+        return  null ;
+    }
+
+
+    GenericProductDto convertToGenericProductDto(FakeStoreProductDto fakeStoreProductDto){
+
+        GenericProductDto genericProductDto = new GenericProductDto() ;
+
+        genericProductDto.setCategory(fakeStoreProductDto.getCategory());
+        genericProductDto.setId(fakeStoreProductDto.getId());
+        genericProductDto.setPrice(fakeStoreProductDto.getPrice());
+        genericProductDto.setTitle(fakeStoreProductDto.getTitle());
+        genericProductDto.setImage(fakeStoreProductDto.getImage());
+        genericProductDto.setDescription(fakeStoreProductDto.getDescription());
+
+        return genericProductDto ;
+    }
+
+
 }

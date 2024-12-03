@@ -33,4 +33,9 @@ import java.util.List;
     public List<GenericProductDto> getAllProducts(){
         return productService.getAllProducts() ;
     }
+
+    @DeleteMapping("{id}")
+    public GenericProductDto deleteProductById(@PathVariable("id") long id){
+        return productService.deleteProductById(id) ;
+    }
 }

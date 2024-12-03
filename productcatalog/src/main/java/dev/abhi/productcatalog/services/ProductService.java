@@ -12,4 +12,6 @@ public interface ProductService {
     GenericProductDto createProduct(GenericProductDto genericProductDto) ;
 
     List<GenericProductDto> getAllProducts();
+
+    GenericProductDto deleteProductById(long id);
 }
