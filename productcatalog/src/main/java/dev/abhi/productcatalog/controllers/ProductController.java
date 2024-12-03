@@ -1,13 +1,13 @@
 package dev.abhi.productcatalog.controllers;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
+import dev.abhi.productcatalog.requestBody.ProductRequestBody;
 import dev.abhi.productcatalog.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/products")
@@ -22,5 +22,15 @@ import org.springframework.web.bind.annotation.RestController;
     @GetMapping("{id}")
     public GenericProductDto getProductById(@PathVariable("id") long id){
         return productService.getProductByID(id) ;
+    }
+
+    @PostMapping
+    public GenericProductDto createProduct(@RequestBody GenericProductDto genericProductDto){
+        return productService.createProduct(genericProductDto);
+    }
+
+    @GetMapping
+    public List<GenericProductDto> getAllProducts(){
+        return productService.getAllProducts() ;
     }
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 //@Qualifier("selfProductService")
 public class SelfProductService implements ProductService {
@@ -13,5 +15,15 @@ public class SelfProductService implements ProductService {
     @Override
     public GenericProductDto getProductByID(Long id) {
         return null;
+    }
+
+    @Override
+    public GenericProductDto createProduct(GenericProductDto genericProductDto) {
+        return null;
+    }
+
+    @Override
+    public List<GenericProductDto> getAllProducts() {
+        return List.of();
     }
 }
