@@ -77,15 +77,35 @@ public class FakeStoreProductService implements ProductService{
 
         RestTemplate restTemplate = restTemplateBuilder.build() ;
 
-        RequestCallback requestCallback = restTemplate.acceptHeaderRequestCallback(GenericProductDto.class);
+        RequestCallback requestCallback =
+                restTemplate.acceptHeaderRequestCallback(FakeStoreProductDto.class);
 
-        ResponseExtractor<ResponseEntity<GenericProductDto>> responseExtractor =
-                restTemplate.responseEntityExtractor(GenericProductDto.class);
+        ResponseExtractor<ResponseEntity<FakeStoreProductDto>> responseExtractor =
+                restTemplate.responseEntityExtractor(FakeStoreProductDto.class);
 
-        ResponseEntity<GenericProductDto> response =
+        ResponseEntity<FakeStoreProductDto> response =
                 restTemplate.execute(requestUrl, HttpMethod.DELETE, requestCallback, responseExtractor, id);
 
-        return response.getBody() ;
+        return convertToGenericProductDto(response.getBody());
+    }
+
+    @Override
+    public GenericProductDto updateProductById(GenericProductDto genericProductDto, long id) {
+        String requestUrl = baseRequestUrl + "{id}";
+
+        RestTemplate restTemplate = restTemplateBuilder.build() ;
+
+        RequestCallback requestCallback =
+                restTemplate.httpEntityCallback(genericProductDto,FakeStoreProductDto.class);
+
+        ResponseExtractor<ResponseEntity<FakeStoreProductDto>> responseExtractor =
+                restTemplate.responseEntityExtractor(FakeStoreProductDto.class);
+
+
+        ResponseEntity<FakeStoreProductDto> response =
+                restTemplate.execute(requestUrl, HttpMethod.PUT, requestCallback, responseExtractor, id);
+
+        return convertToGenericProductDto(response.getBody());
     }
 
 

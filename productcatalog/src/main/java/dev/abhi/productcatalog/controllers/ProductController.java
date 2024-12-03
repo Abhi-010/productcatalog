@@ -5,8 +5,12 @@ import dev.abhi.productcatalog.requestBody.ProductRequestBody;
 import dev.abhi.productcatalog.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.DocFlavor;
 import java.util.List;
 
 @RestController
@@ -35,8 +39,17 @@ import java.util.List;
     }
 
     @DeleteMapping("{id}")
-    public GenericProductDto deleteProductById(@PathVariable("id") long id){
+    public ResponseEntity<GenericProductDto> deleteProductById(@PathVariable("id") long id){
         //System.out.println("id ----" + id);
-        return productService.deleteProductById(id) ;
+        GenericProductDto genericProductDto =  productService.deleteProductById(id) ;
+
+        return new ResponseEntity<>(genericProductDto, HttpStatus.OK);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<GenericProductDto> updateProductByID(@RequestBody GenericProductDto genericProductDto ,@PathVariable("id") long id){
+
+        GenericProductDto genericProductDto1 = productService.updateProductById(genericProductDto,id) ;
+        return new ResponseEntity<>(genericProductDto1,HttpStatus.OK) ;
     }
 }
