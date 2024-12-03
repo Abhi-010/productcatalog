@@ -9,6 +9,7 @@ public class ProductCatalogApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProductCatalogApplication.class, args);
 		System.out.println("Hey Spring Boot...");
+		System.out.println("Hey Spring Boot...");
 	}
 
 }
