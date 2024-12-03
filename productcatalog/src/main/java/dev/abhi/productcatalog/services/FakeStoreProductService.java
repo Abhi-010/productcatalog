@@ -2,6 +2,7 @@ package dev.abhi.productcatalog.services;
 
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
+import dev.abhi.productcatalog.exceptions.NotFoundException;
 import dev.abhi.productcatalog.models.Product;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,7 +34,7 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
-    public GenericProductDto getProductByID(Long id) {
+    public GenericProductDto getProductByID(Long id) throws NotFoundException {
         RestTemplate restTemplate = restTemplateBuilder.build() ;
         String requestUrl = baseRequestUrl + "{id}";
 
@@ -41,6 +42,10 @@ public class FakeStoreProductService implements ProductService{
                 restTemplate.getForEntity(requestUrl, FakeStoreProductDto.class,id) ;
 
         FakeStoreProductDto fakeStoreProductDto = response.getBody() ;
+
+        if(fakeStoreProductDto == null){
+            throw new NotFoundException("Product with id " + id + " doesn't exist");
+        }
 
         return convertToGenericProductDto(fakeStoreProductDto) ;
     }

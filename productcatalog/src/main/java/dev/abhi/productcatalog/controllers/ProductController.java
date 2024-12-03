@@ -1,14 +1,21 @@
 package dev.abhi.productcatalog.controllers;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
+import dev.abhi.productcatalog.dtos.NotFoundExceptionDto;
+import dev.abhi.productcatalog.exceptions.ApiException;
+import dev.abhi.productcatalog.exceptions.ArgumentMisMatchException;
+import dev.abhi.productcatalog.exceptions.NotFoundException;
 import dev.abhi.productcatalog.requestBody.ProductRequestBody;
 import dev.abhi.productcatalog.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.print.DocFlavor;
 import java.util.List;
@@ -24,9 +31,10 @@ import java.util.List;
     }
 
     @GetMapping("{id}")
-    public GenericProductDto getProductById(@PathVariable("id") long id){
-        return productService.getProductByID(id) ;
+    public GenericProductDto getProductById(@PathVariable("id") long id) throws NotFoundException {
+         return productService.getProductByID(id);
     }
+
 
     @PostMapping
     public GenericProductDto createProduct(@RequestBody GenericProductDto genericProductDto){
