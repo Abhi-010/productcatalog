@@ -36,6 +36,7 @@ import java.util.List;
 
     @DeleteMapping("{id}")
     public GenericProductDto deleteProductById(@PathVariable("id") long id){
+        //System.out.println("id ----" + id);
         return productService.deleteProductById(id) ;
     }
 }
