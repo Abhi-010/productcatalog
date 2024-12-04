@@ -34,10 +34,15 @@ public class ControllerAdvice {
        return new ResponseEntity<>(apiException,apiException.getStatus());
     }
 
-    @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<NotFoundExceptionDto> handleNotFoundException(NotFoundException notFoundException){
 
-        return new ResponseEntity<>(new NotFoundExceptionDto(HttpStatus.NOT_FOUND,notFoundException.getMessage()),
-                HttpStatus.NOT_FOUND) ;
-    }
+    /*
+    Commented the below exception because we have used @ResponseStatus annotation
+    in the exception class :
+     */
+//    @ExceptionHandler(NotFoundException.class)
+//    public ResponseEntity<NotFoundExceptionDto> handleNotFoundException(NotFoundException notFoundException){
+//
+//        return new ResponseEntity<>(new NotFoundExceptionDto(HttpStatus.NOT_FOUND,notFoundException.getMessage()),
+//                HttpStatus.NOT_FOUND) ;
+//    }
 }

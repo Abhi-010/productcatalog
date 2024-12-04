@@ -6,6 +6,7 @@ import dev.abhi.productcatalog.services.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -19,9 +20,17 @@ import java.util.List;
         this.productService = productService ;
     }
 
+    /*
+    New way of Handling Exception is by ResponseExceptionStatus Class
+     */
     @GetMapping("{id}")
-    public GenericProductDto getProductById(@PathVariable("id") long id) throws NotFoundException {
-         return productService.getProductByID(id);
+    public GenericProductDto getProductById(@PathVariable("id") long id) {
+        try{
+            return productService.getProductByID(id);
+        }
+        catch (NotFoundException notFoundException){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product with id " + id + " doesn't exist", notFoundException);
+        }
     }
 
     @GetMapping
@@ -49,11 +58,13 @@ import java.util.List;
         return productService.createProduct(genericProductDto);
     }
 
-    @GetMapping("/abc")
+    @GetMapping("/count")
     public String getProductCountWith(@RequestParam(value = "categoryName") String categoryName,
                                    @RequestParam(value="id",required = false,defaultValue = "5") long id){
 
         return "The number of Products with Category Name : " + categoryName +
                 " and id : " + id + " is " + productService.getProductCountWith(categoryName,id);
     }
+
+
 }

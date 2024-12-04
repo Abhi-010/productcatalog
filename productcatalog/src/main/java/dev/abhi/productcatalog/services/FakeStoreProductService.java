@@ -5,6 +5,7 @@ import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
 import dev.abhi.productcatalog.models.Product;
 import dev.abhi.productcatalog.thirdpartyclients.productservice.ThirdPartyProductServiceClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -25,7 +26,8 @@ import java.util.List;
 @Primary
 public class FakeStoreProductService implements ProductService{
 
-    private ThirdPartyProductServiceClient thirdPartyProductServiceClient ;
+
+    private final ThirdPartyProductServiceClient thirdPartyProductServiceClient ;
 
     public FakeStoreProductService(ThirdPartyProductServiceClient thirdPartyProductServiceClient){
         this.thirdPartyProductServiceClient = thirdPartyProductServiceClient;
