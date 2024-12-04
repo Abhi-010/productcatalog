@@ -36,4 +36,9 @@ public class SelfProductService implements ProductService {
     public GenericProductDto updateProductById(GenericProductDto genericProductDto,long id) {
         return null;
     }
+
+    @Override
+    public int getProductCountWith(String categoryName, long id) {
+        return 0;
+    }
 }

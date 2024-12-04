@@ -64,6 +64,14 @@ public class FakeStoreProductService implements ProductService{
        return convertToGenericProductDto(thirdPartyProductServiceClient.updateProductById(genericProductDto,id));
     }
 
+    @Override
+    public int getProductCountWith(String categoryName, long id) {
+        List<GenericProductDto> genericProductDtoList = getAllProducts();
+        genericProductDtoList.removeIf(genericProductDto -> !genericProductDto.getCategory().equals(categoryName));
+        genericProductDtoList.removeIf(genericProductDto -> genericProductDto.getId() < 9 );
+        return genericProductDtoList.size();
+    }
+
 
     GenericProductDto convertToGenericProductDto(FakeStoreProductDto fakeStoreProductDto){
 

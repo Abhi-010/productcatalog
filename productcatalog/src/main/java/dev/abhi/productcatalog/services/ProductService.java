@@ -17,4 +17,6 @@ public interface ProductService {
     GenericProductDto deleteProductById(long id);
 
     GenericProductDto updateProductById(GenericProductDto genericProductDto,long id) ;
+
+    int getProductCountWith(String categoryName, long id);
 }

@@ -48,4 +48,12 @@ import java.util.List;
     public GenericProductDto createProduct(@RequestBody GenericProductDto genericProductDto){
         return productService.createProduct(genericProductDto);
     }
+
+    @GetMapping("/abc")
+    public String getProductCountWith(@RequestParam(value = "categoryName") String categoryName,
+                                   @RequestParam(value="id",required = false,defaultValue = "5") long id){
+
+        return "The number of Products with Category Name : " + categoryName +
+                " and id : " + id + " is " + productService.getProductCountWith(categoryName,id);
+    }
 }
