@@ -1,11 +1,13 @@
 package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
 
+import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -16,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 @Primary
@@ -103,5 +106,20 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
 
         return response.getBody();
     }
+
+    @Override
+    public List<FakeStoreProductDto> getProductByCategory(String categoryName) {
+        String requestUrl = baseRequestUrl + "category/" + categoryName;
+
+        RestTemplate restTemplate = restTemplateBuilder.build() ;
+
+        HttpEntity<FakeStoreProductDto> httpEntity = new HttpEntity<>() ;
+
+        ResponseEntity<FakeStoreProductDto[]> response =
+                restTemplate.exchange(requestUrl,HttpMethod.GET,new HttpEntity<>(null,null),FakeStoreProductDto[].class);
+
+        return Arrays.asList(Objects.requireNonNull(response.getBody()));
+    }
+
 
 }

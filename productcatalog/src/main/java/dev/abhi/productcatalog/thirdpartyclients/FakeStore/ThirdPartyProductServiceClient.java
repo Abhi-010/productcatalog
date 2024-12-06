@@ -1,5 +1,6 @@
 package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
 
+import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
@@ -16,4 +17,6 @@ public interface ThirdPartyProductServiceClient {
     FakeStoreProductDto deleteProductById(long id);
 
     FakeStoreProductDto updateProductById(GenericProductDto genericProductDto,long id);
+
+    List<FakeStoreProductDto> getProductByCategory(String name);
 }

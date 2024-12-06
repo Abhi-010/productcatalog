@@ -66,5 +66,10 @@ import java.util.List;
                 " and id : " + id + " is " + productService.getProductCountWith(categoryName,id);
     }
 
+    @GetMapping("/category/{categoryName}")
+    public List<GenericProductDto> getProductByCategory(@PathVariable("categoryName") String categoryName){
+        return productService.getProductByCategory(categoryName);
+    }
+
 
 }

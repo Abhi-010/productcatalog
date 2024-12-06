@@ -22,4 +22,6 @@ public class CategoryController {
     public List<CategoryDto> getAllCategories(){
         return categoryService.getAllCategories() ;
     }
+
+
 }

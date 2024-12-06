@@ -38,4 +38,9 @@ public class SelfProductService implements ProductService {
     public int getProductCountWith(String categoryName, long id) {
         return 0;
     }
+
+    @Override
+    public List<GenericProductDto> getProductByCategory(String categoryName) {
+        return List.of();
+    }
 }
