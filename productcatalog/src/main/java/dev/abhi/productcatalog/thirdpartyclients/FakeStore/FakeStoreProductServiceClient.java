@@ -3,8 +3,6 @@ package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
-import dev.abhi.productcatalog.services.FakeStoreProductService;
-import dev.abhi.productcatalog.thirdpartyclients.productservice.ThirdPartyProductServiceClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Primary;
@@ -105,7 +103,5 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
 
         return response.getBody();
     }
-
-
 
 }

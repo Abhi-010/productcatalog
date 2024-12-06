@@ -2,7 +2,7 @@ package dev.abhi.productcatalog.controllers;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
-import dev.abhi.productcatalog.services.ProductService;
+import dev.abhi.productcatalog.services.productservices.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

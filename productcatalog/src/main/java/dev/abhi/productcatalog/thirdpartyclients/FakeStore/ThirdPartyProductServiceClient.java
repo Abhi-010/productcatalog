@@ -1,4 +1,4 @@
-package dev.abhi.productcatalog.thirdpartyclients.productservice;
+package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
 
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;

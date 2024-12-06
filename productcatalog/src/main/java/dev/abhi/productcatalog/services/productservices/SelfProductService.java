@@ -1,9 +1,6 @@
-package dev.abhi.productcatalog.services;
+package dev.abhi.productcatalog.services.productservices;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
-import dev.abhi.productcatalog.models.Product;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

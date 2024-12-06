@@ -1,9 +1,7 @@
-package dev.abhi.productcatalog.services;
+package dev.abhi.productcatalog.services.productservices;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
-import dev.abhi.productcatalog.models.Product;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

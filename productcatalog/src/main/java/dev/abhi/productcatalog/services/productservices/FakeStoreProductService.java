@@ -1,26 +1,14 @@
-package dev.abhi.productcatalog.services;
+package dev.abhi.productcatalog.services.productservices;
 
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
-import dev.abhi.productcatalog.models.Product;
-import dev.abhi.productcatalog.thirdpartyclients.productservice.ThirdPartyProductServiceClient;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import dev.abhi.productcatalog.thirdpartyclients.FakeStore.ThirdPartyProductServiceClient;
 import org.springframework.context.annotation.Primary;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpMessageConverterExtractor;
-import org.springframework.web.client.RequestCallback;
-import org.springframework.web.client.ResponseExtractor;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 //@Qualifier("fakeProductService")
