@@ -113,10 +113,10 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
 
         RestTemplate restTemplate = restTemplateBuilder.build() ;
 
-        HttpEntity<FakeStoreProductDto> httpEntity = new HttpEntity<>() ;
+        HttpEntity<FakeStoreProductDto> httpEntity = new HttpEntity<>(null) ;
 
         ResponseEntity<FakeStoreProductDto[]> response =
-                restTemplate.exchange(requestUrl,HttpMethod.GET,new HttpEntity<>(null,null),FakeStoreProductDto[].class);
+                restTemplate.exchange(requestUrl,HttpMethod.GET,httpEntity,FakeStoreProductDto[].class);
 
         return Arrays.asList(Objects.requireNonNull(response.getBody()));
     }
