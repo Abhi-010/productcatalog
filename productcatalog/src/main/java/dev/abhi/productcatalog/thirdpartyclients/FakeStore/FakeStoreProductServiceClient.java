@@ -121,5 +121,4 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
         return Arrays.asList(Objects.requireNonNull(response.getBody()));
     }
 
-
 }
