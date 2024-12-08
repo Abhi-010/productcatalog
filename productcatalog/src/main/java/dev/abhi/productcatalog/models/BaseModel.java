@@ -1,14 +1,13 @@
 package dev.abhi.productcatalog.models;
 
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
+@MappedSuperclass
 public class BaseModel {
 //    @Id
 //    @GeneratedValue(generator = "uuidgenerator")

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name="ms_mentor")
+//@Entity(name="ms_mentor")
 public class Mentor extends User {
     private double averageRating ;
 }

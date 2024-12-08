@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name="st_user")
+//@Entity(name="st_user")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "userType",discriminatorType = DiscriminatorType.INTEGER)
 @DiscriminatorValue(value = "0")
