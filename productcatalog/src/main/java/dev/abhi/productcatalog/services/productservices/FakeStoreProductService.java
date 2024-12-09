@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 //@Qualifier("fakeProductService")
-@Primary
+//@Primary
 public class FakeStoreProductService implements ProductService{
 
     private final ThirdPartyProductServiceClient thirdPartyProductServiceClient ;

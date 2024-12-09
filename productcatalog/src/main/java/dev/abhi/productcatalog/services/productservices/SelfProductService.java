@@ -1,12 +1,14 @@
 package dev.abhi.productcatalog.services.productservices;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 //@Qualifier("selfProductService")
+@Primary
 public class SelfProductService implements ProductService {
 
     @Override

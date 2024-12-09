@@ -9,4 +9,6 @@ import java.util.List;
 public interface CategoryService {
 
     List<CategoryDto> getAllCategories() ;
+
+    CategoryDto createCategory(String newCategory);
 }

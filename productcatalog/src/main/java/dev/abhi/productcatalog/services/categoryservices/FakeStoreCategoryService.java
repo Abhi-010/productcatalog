@@ -32,4 +32,9 @@ public class FakeStoreCategoryService implements CategoryService{
         }
         return categoryDtoList ;
     }
+
+    @Override
+    public CategoryDto createCategory(String newCategory) {
+        return null;
+    }
 }

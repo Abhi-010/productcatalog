@@ -1,15 +1,14 @@
 package dev.abhi.productcatalog.controllers;
 
 import dev.abhi.productcatalog.dtos.CategoryDto;
+import dev.abhi.productcatalog.requestBody.CategoryRequestBody;
 import dev.abhi.productcatalog.services.categoryservices.CategoryService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/categories")
 public class CategoryController {
 
     private final CategoryService categoryService ;
@@ -18,10 +17,13 @@ public class CategoryController {
         this.categoryService = categoryService ;
     }
 
-    @GetMapping("/categories")
+    @GetMapping
     public List<CategoryDto> getAllCategories(){
         return categoryService.getAllCategories() ;
     }
 
-
+    @PostMapping
+    public CategoryDto createCategory(@RequestBody CategoryRequestBody categoryRequestBody){
+        return categoryService.createCategory(categoryRequestBody.getNewCategory());
+    }
 }
