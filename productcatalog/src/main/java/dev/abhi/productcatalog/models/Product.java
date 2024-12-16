@@ -12,12 +12,14 @@ public class Product extends BaseModel{
     private String description ;
     private String image ;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType. DETACH})
+    private Currency currency ;
+
+    private double price ;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    //@ManyToOne
     @JoinColumn(name = "cat_id",nullable = false)
     private Category category ;
-
-    @OneToOne(cascade = {CascadeType.PERSIST})
-    private Price price ;
 
     @Column(name="inven_count",nullable = false,length = 121)
     private int inventoryCount ;

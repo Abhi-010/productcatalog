@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 //@Qualifier("fakeProductService")
@@ -22,9 +23,13 @@ public class FakeStoreProductService implements ProductService{
         this.thirdPartyProductServiceClient = thirdPartyProductServiceClient;
     }
 
-    @Override
     public GenericProductDto getProductByID(Long id) throws NotFoundException {
         return convertToGenericProductDto(thirdPartyProductServiceClient.getProductByID(id)) ;
+    }
+
+    @Override
+    public GenericProductDto getProductByID(UUID id) throws NotFoundException {
+        return null;
     }
 
     @Override
@@ -58,8 +63,10 @@ public class FakeStoreProductService implements ProductService{
     @Override
     public int getProductCountWith(String categoryName, long id) {
         List<GenericProductDto> genericProductDtoList = getAllProducts();
+
         genericProductDtoList.removeIf(genericProductDto -> !genericProductDto.getCategory().equals(categoryName));
-        genericProductDtoList.removeIf(genericProductDto -> genericProductDto.getId() < 9 );
+
+       // genericProductDtoList.removeIf(genericProductDto -> genericProductDto.getId() < 9 );
         return genericProductDtoList.size();
     }
 
@@ -81,7 +88,7 @@ public class FakeStoreProductService implements ProductService{
         GenericProductDto genericProductDto = new GenericProductDto() ;
 
         genericProductDto.setCategory(fakeStoreProductDto.getCategory());
-        genericProductDto.setId(fakeStoreProductDto.getId());
+        genericProductDto.setId(fakeStoreProductDto.getId()+ " ");
         genericProductDto.setPrice(fakeStoreProductDto.getPrice());
         genericProductDto.setTitle(fakeStoreProductDto.getTitle());
         genericProductDto.setImage(fakeStoreProductDto.getImage());

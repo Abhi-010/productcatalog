@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/products")
@@ -24,9 +25,9 @@ import java.util.List;
     New way of Handling Exception is by ResponseExceptionStatus Class
      */
     @GetMapping("{id}")
-    public GenericProductDto getProductById(@PathVariable("id") long id) {
+    public GenericProductDto getProductById(@PathVariable("id") String id) {
         try{
-            return productService.getProductByID(id);
+            return productService.getProductByID(UUID.fromString(id));
         }
         catch (NotFoundException notFoundException){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product with id " + id + " doesn't exist", notFoundException);
@@ -40,15 +41,12 @@ import java.util.List;
 
     @DeleteMapping("{id}")
     public ResponseEntity<GenericProductDto> deleteProductById(@PathVariable("id") long id){
-        //System.out.println("id ----" + id);
         GenericProductDto genericProductDto =  productService.deleteProductById(id) ;
-
         return new ResponseEntity<>(genericProductDto, HttpStatus.OK);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<GenericProductDto> updateProductByID(@RequestBody GenericProductDto genericProductDto ,@PathVariable("id") long id){
-
         GenericProductDto genericProductDto1 = productService.updateProductById(genericProductDto,id) ;
         return new ResponseEntity<>(genericProductDto1,HttpStatus.OK) ;
     }
@@ -61,7 +59,6 @@ import java.util.List;
     @GetMapping("/count")
     public String getProductCountWith(@RequestParam(value = "categoryName") String categoryName,
                                    @RequestParam(value="id",required = false,defaultValue = "5") long id){
-
         return "The number of Products with Category Name : " + categoryName +
                 " and id : " + id + " is " + productService.getProductCountWith(categoryName,id);
     }

@@ -4,14 +4,9 @@ import dev.abhi.productcatalog.Repository.CategoryRepository;
 import dev.abhi.productcatalog.Repository.ProductRepository;
 import dev.abhi.productcatalog.models.Category;
 import dev.abhi.productcatalog.models.Currency;
-import dev.abhi.productcatalog.models.Price;
 import dev.abhi.productcatalog.models.Product;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 
 @Component
 public class DataLoaderForProductCategory {
@@ -48,10 +43,6 @@ public class DataLoaderForProductCategory {
         product.setDescription("49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and  ghosting, and reduce input lag");
         product.setImage("https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg");
 
-        Price price = new Price();
-        price.setCurrency(Currency.EURO);
-        price.setPrice(999);
-        product.setPrice(price);
 
         Category category = new Category();
         category.setName("jewelery");
@@ -67,10 +58,6 @@ public class DataLoaderForProductCategory {
         product.setDescription("21. 5 inches Full HD (1920 x 1080) widescreen IPS display");
         product.setImage("https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg");
 
-        price = new Price();
-        price.setCurrency(Currency.USD);
-        price.setPrice(100);
-        product.setPrice(price);
 
         category = new Category() ;
         category.setName("electronics");
@@ -82,10 +69,6 @@ public class DataLoaderForProductCategory {
         product.setTitle("Mens Casual Slim Fit");
         product.setDescription("The color could be slightly different between on the screen and in practice");
         product.setImage("https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg");
-        price = new Price();
-        price.setCurrency(Currency.INR);
-        price.setPrice(134);
-        product.setPrice(price);
 
         category = new Category() ;
         category.setName("men's clothing");
@@ -98,10 +81,7 @@ public class DataLoaderForProductCategory {
         product.setTitle("Solid Gold Petite Micropave");
         product.setDescription("Satisfaction Guaranteed. Return or exchange any order");
         product.setImage("https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg");
-        price = new Price();
-        price.setCurrency(Currency.INR);
-        price.setPrice(140);
-        product.setPrice(price);
+
 
         category = new Category() ;
         category.setName("jewelery");

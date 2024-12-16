@@ -4,9 +4,10 @@ import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface ProductService {
-    GenericProductDto getProductByID(Long id) throws NotFoundException;
+    GenericProductDto getProductByID(UUID id) throws NotFoundException;
 
     GenericProductDto createProduct(GenericProductDto genericProductDto) ;
 
