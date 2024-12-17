@@ -51,7 +51,8 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
-    public GenericProductDto deleteProductById(long id) {
+    public GenericProductDto deleteProductById(String uuid) {
+        long id = Long.parseLong(uuid) ;
        return convertToGenericProductDto(thirdPartyProductServiceClient.deleteProductById(id));
     }
 

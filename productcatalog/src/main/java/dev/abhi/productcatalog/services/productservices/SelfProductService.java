@@ -90,8 +90,14 @@ public class SelfProductService implements ProductService {
     }
 
     @Override
-    public GenericProductDto deleteProductById(long id) {
-        return null;
+    public GenericProductDto deleteProductById(String uuid) throws NotFoundException {
+       UUID id = UUID.fromString(uuid);
+       Optional<Product> optionalProduct = productRepository.findById(id) ;
+       if(optionalProduct.isEmpty()){
+           throw new NotFoundException("Product with id " + uuid + " not present");
+       }
+       productRepository.deleteById(id);
+       return convertToGenericProductDto(optionalProduct.get()) ;
     }
 
     @Override

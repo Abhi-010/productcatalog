@@ -40,8 +40,8 @@ import java.util.UUID;
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<GenericProductDto> deleteProductById(@PathVariable("id") long id){
-        GenericProductDto genericProductDto =  productService.deleteProductById(id) ;
+    public ResponseEntity<GenericProductDto> deleteProductById(@PathVariable("id") String uuid) throws NotFoundException {
+        GenericProductDto genericProductDto =  productService.deleteProductById(uuid) ;
         return new ResponseEntity<>(genericProductDto, HttpStatus.OK);
     }
 
