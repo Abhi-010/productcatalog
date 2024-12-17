@@ -19,5 +19,5 @@ public interface ProductService {
 
     int getProductCountWith(String categoryName, long id);
 
-    List<GenericProductDto> getProductByCategory(String categoryName);
+    List<GenericProductDto> getProductByCategory(String categoryName) throws NotFoundException;
 }

@@ -8,6 +8,7 @@ import dev.abhi.productcatalog.exceptions.NotFoundException;
 import dev.abhi.productcatalog.models.Category;
 import dev.abhi.productcatalog.models.Currency;
 import dev.abhi.productcatalog.models.Product;
+import dev.abhi.productcatalog.services.categoryservices.CategoryService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 //@Qualifier("selfProductService")
@@ -23,10 +25,12 @@ public class SelfProductService implements ProductService {
 
     private final ProductRepository productRepository ;
     private final CategoryRepository categoryRepository ;
+    private final CategoryService categoryService ;
 
-    public SelfProductService(ProductRepository productRepository, CategoryRepository categoryRepository){
+    public SelfProductService(ProductRepository productRepository, CategoryRepository categoryRepository,CategoryService categoryService){
         this.productRepository = productRepository ;
         this.categoryRepository = categoryRepository ;
+        this.categoryService = categoryService ;
     }
 
     @Override
@@ -81,7 +85,8 @@ public class SelfProductService implements ProductService {
 
     @Override
     public List<GenericProductDto> getAllProducts() {
-        return List.of();
+        List<Product> listOfProducts = productRepository.findAll();
+        return listOfProducts.stream().map(this::convertToGenericProductDto).collect(Collectors.toList());
     }
 
     @Override
@@ -100,7 +105,8 @@ public class SelfProductService implements ProductService {
     }
 
     @Override
-    public List<GenericProductDto> getProductByCategory(String categoryName) {
-        return List.of();
+    public List<GenericProductDto> getProductByCategory(String categoryName) throws NotFoundException {
+        List<Product> listOfProducts = categoryService.getAllProductsByCategoryName(categoryName);
+        return listOfProducts.stream().map(this::convertToGenericProductDto).toList() ;
     }
 }

@@ -64,7 +64,7 @@ import java.util.UUID;
     }
 
     @GetMapping("/category/{categoryName}")
-    public List<GenericProductDto> getProductByCategory(@PathVariable("categoryName") String categoryName){
+    public List<GenericProductDto> getProductByCategory(@PathVariable("categoryName") String categoryName) throws NotFoundException {
         return productService.getProductByCategory(categoryName);
     }
 

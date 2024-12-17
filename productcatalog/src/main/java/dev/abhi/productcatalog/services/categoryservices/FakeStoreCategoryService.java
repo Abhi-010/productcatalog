@@ -3,6 +3,8 @@ package dev.abhi.productcatalog.services.categoryservices;
 import dev.abhi.productcatalog.dtos.CategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
+import dev.abhi.productcatalog.exceptions.NotFoundException;
+import dev.abhi.productcatalog.models.Product;
 import dev.abhi.productcatalog.thirdpartyclients.FakeStore.ThirdPartyCategoryServiceClient;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +38,10 @@ public class FakeStoreCategoryService implements CategoryService{
     @Override
     public CategoryDto createCategory(String newCategory) {
         return null;
+    }
+
+    @Override
+    public List<Product> getAllProductsByCategoryName(String categoryName) throws NotFoundException {
+        return List.of();
     }
 }
