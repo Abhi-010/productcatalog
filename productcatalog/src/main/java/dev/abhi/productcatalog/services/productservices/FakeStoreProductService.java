@@ -57,7 +57,8 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
-    public GenericProductDto updateProductById(GenericProductDto genericProductDto, long id) {
+    public GenericProductDto updateProductById(GenericProductDto genericProductDto, String uuid) {
+        long id = Long.parseLong(uuid) ;
        return convertToGenericProductDto(thirdPartyProductServiceClient.updateProductById(genericProductDto,id));
     }
 

@@ -15,7 +15,7 @@ public interface ProductService {
 
     GenericProductDto deleteProductById(String uuid) throws NotFoundException;
 
-    GenericProductDto updateProductById(GenericProductDto genericProductDto,long id) ;
+    GenericProductDto updateProductById(GenericProductDto genericProductDto,String id) throws NotFoundException;
 
     int getProductCountWith(String categoryName, long id);
 

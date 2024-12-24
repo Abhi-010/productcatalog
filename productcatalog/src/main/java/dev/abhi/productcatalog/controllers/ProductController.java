@@ -46,7 +46,7 @@ import java.util.UUID;
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<GenericProductDto> updateProductByID(@RequestBody GenericProductDto genericProductDto ,@PathVariable("id") long id){
+    public ResponseEntity<GenericProductDto> updateProductByID(@RequestBody GenericProductDto genericProductDto ,@PathVariable("id") String id) throws NotFoundException {
         GenericProductDto genericProductDto1 = productService.updateProductById(genericProductDto,id) ;
         return new ResponseEntity<>(genericProductDto1,HttpStatus.OK) ;
     }

@@ -101,8 +101,27 @@ public class SelfProductService implements ProductService {
     }
 
     @Override
-    public GenericProductDto updateProductById(GenericProductDto genericProductDto,long id) {
-        return null;
+    public GenericProductDto updateProductById(GenericProductDto genericProductDto,String uuid) throws NotFoundException {
+        Optional<Product> optionalProduct = productRepository.findById(UUID.fromString(uuid) ) ;
+        if(optionalProduct.isEmpty()){
+            throw new NotFoundException("Product with id " + uuid + " not available");
+        }
+
+        Product oldProduct = optionalProduct.get() ;
+        Optional<Category> optionalCategory  = categoryRepository.findCategoryByName(genericProductDto.getCategory());
+        if(optionalCategory.isEmpty()){
+            Category category = new Category() ;
+            category.setName(genericProductDto.getCategory());
+            Category savedCategory = categoryRepository.save(category) ;
+            oldProduct.setCategory(savedCategory);
+        }
+        oldProduct.setImage(genericProductDto.getImage());
+        oldProduct.setTitle(genericProductDto.getTitle());
+        oldProduct.setPrice(genericProductDto.getPrice());
+        oldProduct.setInventoryCount(genericProductDto.getInventoryCount());
+
+        productRepository.save(oldProduct) ;
+        return convertToGenericProductDto(oldProduct) ;
     }
 
     @Override
