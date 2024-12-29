@@ -36,7 +36,7 @@ public class SelfProductService implements ProductService {
     @Override
     public GenericProductDto getProductByID(UUID id) throws NotFoundException {
 
-        Optional<Product> product = productRepository.findById(id) ;
+        Optional<Product> product = productRepository.findById(id);
         if(product.isEmpty()){
             throw new NotFoundException("Product is not available");
         }
