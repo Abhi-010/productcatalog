@@ -11,11 +11,16 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -49,6 +54,28 @@ public class CategoryControllerWebMvcTest {
         // Assert :
 
         // .andExpect(jsonPath("$.id",is("61c84078-da0a-4b8e-9f9f-59e0b43a6c05")))
+    }
+
+    @Test
+    void addTwoNumber(){
+        assertThat(4+3,is(7)) ;
+    }
+
+    @Test
+    void testList(){
+        List<Integer> result = List.of(1,2,3);
+        List<Integer> expected = List.of(1,2);
+
+        assertThat(result)
+                .withFailMessage("Expected %s but found %s", expected, result)
+                .isEqualTo(expected);
+    }
+
+    @Test
+    public void given2Strings_whenEqual_thenCorrect() {
+        String a = "foo";
+        String b = "FOO";
+        assertThat(a, equalToIgnoringCase(b));
     }
   
 }
