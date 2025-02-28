@@ -34,6 +34,15 @@ public class ControllerAdvice {
        return new ResponseEntity<>(apiException,apiException.getStatus());
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Object> IllegalArgumentException(IllegalArgumentException ex){
+        System.out.println("Getting Illegal Argument Exception...");
+
+        String error = ex.getMessage() ;
+        ApiException apiException = new ApiException(HttpStatus.BAD_REQUEST,ex.getLocalizedMessage(),error);
+        return new ResponseEntity<>(apiException,apiException.getStatus()) ;
+    }
+
 
     /*
     Commented the below exception because we have used @ResponseStatus annotation
