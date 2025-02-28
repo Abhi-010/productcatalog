@@ -16,4 +16,7 @@ public interface CategoryRepository extends CrudRepository<Category, UUID> {
 
    // @Query(value = CustomQueries.FIND_BY_ALL_NAME, nativeQuery = true)
     List<Category> findAllByName(String name);
+
+    @Query(value = CustomQueries.FIND_ALL_CATEGORY,nativeQuery = true)
+    List<Category> getAllCategory() ;
 }

@@ -30,7 +30,8 @@ import java.util.UUID;
             return productService.getProductByID(UUID.fromString(id));
         }
         catch (NotFoundException notFoundException){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product with id " + id + " doesn't exist", notFoundException);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "Product with id " + id + " doesn't exist", notFoundException);
         }
     }
 

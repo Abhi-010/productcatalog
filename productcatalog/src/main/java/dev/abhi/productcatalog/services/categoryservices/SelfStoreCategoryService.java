@@ -8,6 +8,8 @@ import dev.abhi.productcatalog.models.Product;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +23,18 @@ public class SelfStoreCategoryService implements CategoryService{
     }
     @Override
     public List<CategoryDto> getAllCategories() {
-        return List.of();
+
+        List<Category> finalList = categoryRepository.getAllCategory() ;
+
+        List<CategoryDto> categoryDtoList = new ArrayList<>() ;
+
+        for(Category category : finalList){
+            CategoryDto categoryDto = new CategoryDto() ;
+            categoryDto.setName(category.getName());
+            categoryDtoList.add(categoryDto) ;
+        }
+
+        return  categoryDtoList;
     }
 
     @Override
