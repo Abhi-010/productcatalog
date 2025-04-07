@@ -2,13 +2,18 @@ package dev.abhi.productcatalog.controllers;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
+import dev.abhi.productcatalog.security.JwtObject;
+import dev.abhi.productcatalog.security.TokenValidator;
 import dev.abhi.productcatalog.services.productservices.ProductService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -16,17 +21,25 @@ import java.util.UUID;
  public class ProductController {
 
     private final ProductService productService ;
+    private final TokenValidator tokenValidator ;
 
-    public ProductController(ProductService productService){
+    public ProductController(ProductService productService, TokenValidator tokenValidator){
         this.productService = productService ;
+        this.tokenValidator = tokenValidator ;
     }
 
     /*
     New way of Handling Exception is by ResponseExceptionStatus Class
      */
     @GetMapping("{id}")
-    public GenericProductDto getProductById(@PathVariable("id") String id) {
+    public GenericProductDto getProductById(@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken
+            ,@PathVariable("id") String id) {
         try{
+            System.out.println("Auth token :: " + authToken);
+
+            Optional<JwtObject> jwtObjectOptional =
+                    tokenValidator.validateToken(1L,authToken);
+
             return productService.getProductByID(UUID.fromString(id));
         }
         catch (NotFoundException notFoundException){

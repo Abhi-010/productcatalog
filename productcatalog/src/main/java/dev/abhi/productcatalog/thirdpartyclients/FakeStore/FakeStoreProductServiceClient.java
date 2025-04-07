@@ -39,7 +39,7 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
         String requestUrl = baseRequestUrl + "{id}";
 
         ResponseEntity<FakeStoreProductDto> response =
-                restTemplate.getForEntity(requestUrl, FakeStoreProductDto.class,id) ;
+                restTemplate.getForEntity(requestUrl,FakeStoreProductDto.class,id) ;
 
         FakeStoreProductDto fakeStoreProductDto = response.getBody() ;
 
