@@ -37,8 +37,8 @@ import java.util.UUID;
         try{
             System.out.println("Auth token :: " + authToken);
 
-            Optional<JwtObject> jwtObjectOptional =
-                    tokenValidator.validateToken(1L,authToken);
+//            Optional<JwtObject> jwtObjectOptional =
+//                    tokenValidator.validateToken(1L,authToken);
 
             return productService.getProductByID(UUID.fromString(id));
         }
@@ -49,7 +49,10 @@ import java.util.UUID;
     }
 
     @GetMapping
-    public List<GenericProductDto> getAllProducts(){
+    public List<GenericProductDto> getAllProducts(@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken){
+
+        System.out.println("auth toke ::: " + authToken);
+
         return productService.getAllProducts() ;
     }
 
