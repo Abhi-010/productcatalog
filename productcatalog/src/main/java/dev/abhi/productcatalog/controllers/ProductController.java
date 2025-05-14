@@ -49,9 +49,10 @@ import java.util.UUID;
     }
 
     @GetMapping
-    public List<GenericProductDto> getAllProducts(@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken){
+    public List<GenericProductDto> getAllProducts(){//@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken){
 
-        System.out.println("auth toke ::: " + authToken);
+        //System.out.println("auth toke ::: " + authToken);
+        System.out.println("hey this is for testing purpose ::::::::::::::::::::::");
 
         return productService.getAllProducts() ;
     }

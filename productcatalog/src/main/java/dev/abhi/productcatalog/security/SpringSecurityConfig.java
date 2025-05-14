@@ -26,7 +26,7 @@ public class SpringSecurityConfig {
             throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/products").hasAuthority("ROLE_admin")
+                        .requestMatchers("/products").hasAuthority("admin")
                         .anyRequest().permitAll()
                 )
                 .csrf().disable()
