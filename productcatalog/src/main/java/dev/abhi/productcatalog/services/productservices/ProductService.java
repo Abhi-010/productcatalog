@@ -11,6 +11,8 @@ public interface ProductService {
 
     GenericProductDto createProduct(GenericProductDto genericProductDto) ;
 
+    List<GenericProductDto> createProductInBulk(List<GenericProductDto> genericProductDtoList) ;
+
     List<GenericProductDto> getAllProducts();
 
     GenericProductDto deleteProductById(String uuid) throws NotFoundException;

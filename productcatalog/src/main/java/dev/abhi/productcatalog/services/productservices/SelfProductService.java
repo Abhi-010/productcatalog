@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -67,6 +68,16 @@ public class SelfProductService implements ProductService {
 
         Product savedProduct = productRepository.save(savingProduct);
         return convertToGenericProductDto(savedProduct);
+    }
+
+    @Override
+    public List<GenericProductDto> createProductInBulk(List<GenericProductDto> genericProductDtoList) {
+
+        List<GenericProductDto> list = new ArrayList<>();
+        for(GenericProductDto genericProductDto : genericProductDtoList){
+            list.add(this.createProduct(genericProductDto));
+        }
+        return list;
     }
 
     public GenericProductDto convertToGenericProductDto(Product product){

@@ -40,6 +40,11 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
+    public List<GenericProductDto> createProductInBulk(List<GenericProductDto> genericProductDtoList) {
+        return List.of();
+    }
+
+    @Override
     public List<GenericProductDto> getAllProducts() {
         List<FakeStoreProductDto> fakeStoreProductDtos = thirdPartyProductServiceClient.getAllProducts();
         List<GenericProductDto> genericProductDtoList = new ArrayList<>() ;

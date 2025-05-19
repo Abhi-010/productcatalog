@@ -57,6 +57,11 @@ import java.util.UUID;
         return productService.createProduct(genericProductDto);
     }
 
+    @PostMapping("/create-product-bulk")
+    public List<GenericProductDto> createProductBulk(@RequestBody List<GenericProductDto> genericProductDtoList){
+        return productService.createProductInBulk(genericProductDtoList);
+    }
+
     @GetMapping("/count")
     public String getProductCountWith(@RequestParam(value = "categoryName") String categoryName,
                                    @RequestParam(value="id",required = false,defaultValue = "5") long id){
