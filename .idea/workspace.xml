@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b505d0a-7587-4c9d-baec-81071874d764" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="e935c7c3-e5bc-489c-a580-4d1c5e02d327" value="Rose" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="com.intellij.jpb.FlywayMigrationScript" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/3.4.0/spring-data-commons-3.4.0.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.0/spring-web-6.2.0-sources.jar!/org/springframework/http/HttpEntity.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/productcatalog/pom.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2pQiBcu1uhwMdNk13GTxLl1ONIG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CategoryControllerWebMvcTest.addTwoNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CategoryControllerWebMvcTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CategoryControllerWebMvcTest.getAllCategoriestest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CategoryControllerWebMvcTest.given2Strings_whenEqual_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CategoryControllerWebMvcTest.testList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductCatalogApplicationTests.throwExceptionWhenProductNotAvailableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllerWebMVCTest.createProductShouldCreateNewProduct.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllerWebMVCTest.getAllProductsReturnsEmptyListWhenNoProducts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllerWebMVCTest.returnListOfProductsWhenProductExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllersTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllersTest.shouldReturnTitle.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllersTest.testOnePlusTwoEqualsTrue.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllersTest.testProductWithId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SelfProductServiceTest.testGetByProductById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SelfProductServiceTest.throwExceptionWhenProductNotAvailableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SelfProductServiceTest.throwNotFoundExceptionWhenProductNotAvailableInGetProductById.executor&quot;: &quot;Debug&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProductCatalogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductcatalogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/product__updates&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/auth&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.24022989&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.flyway.settings.FlywayConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\product_service\productcatalog\src\main\java\dev\abhi\productcatalog\inheritancerelations\joinedtable" />
+      <recent name="D:\product_service\productcatalog\src\main\java\dev\abhi\productcatalog\inheritancerelations\tableperclass" />
+      <recent name="D:\product_service\productcatalog\src\main\java\dev\abhi\productcatalog\inheritancerelations\singletable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\product_service\productcatalog\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ProductCatalogApplication">
+    <configuration name="CategoryControllerWebMvcTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productcatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.abhi.productcatalog.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.abhi.productcatalog.controllers" />
+      <option name="MAIN_CLASS_NAME" value="dev.abhi.productcatalog.controllers.CategoryControllerWebMvcTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryControllerWebMvcTest.addTwoNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productcatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.abhi.productcatalog.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.abhi.productcatalog.controllers" />
+      <option name="MAIN_CLASS_NAME" value="dev.abhi.productcatalog.controllers.CategoryControllerWebMvcTest" />
+      <option name="METHOD_NAME" value="addTwoNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryControllerWebMvcTest.getAllCategoriestest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productcatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.abhi.productcatalog.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.abhi.productcatalog.controllers" />
+      <option name="MAIN_CLASS_NAME" value="dev.abhi.productcatalog.controllers.CategoryControllerWebMvcTest" />
+      <option name="METHOD_NAME" value="getAllCategoriestest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryControllerWebMvcTest.given2Strings_whenEqual_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productcatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.abhi.productcatalog.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.abhi.productcatalog.controllers" />
+      <option name="MAIN_CLASS_NAME" value="dev.abhi.productcatalog.controllers.CategoryControllerWebMvcTest" />
+      <option name="METHOD_NAME" value="given2Strings_whenEqual_thenCorrect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryControllerWebMvcTest.testList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productcatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.abhi.productcatalog.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.abhi.productcatalog.controllers" />
+      <option name="MAIN_CLASS_NAME" value="dev.abhi.productcatalog.controllers.CategoryControllerWebMvcTest" />
+      <option name="METHOD_NAME" value="testList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductCatalogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="productcatalog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.abhi.productcatalog.ProductCatalogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CategoryControllerWebMvcTest.given2Strings_whenEqual_thenCorrect" />
+        <item itemvalue="JUnit.CategoryControllerWebMvcTest.testList" />
+        <item itemvalue="JUnit.CategoryControllerWebMvcTest.addTwoNumber" />
+        <item itemvalue="JUnit.CategoryControllerWebMvcTest.getAllCategoriestest" />
+        <item itemvalue="JUnit.CategoryControllerWebMvcTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b505d0a-7587-4c9d-baec-81071874d764" name="Changes" comment="" />
+      <created>1732704565585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732704565585</updated>
+      <workItem from="1732704566612" duration="1545000" />
+      <workItem from="1732718473240" duration="3326000" />
+      <workItem from="1732881538312" duration="207000" />
+      <workItem from="1733185753570" duration="24038000" />
+      <workItem from="1733232191763" duration="13595000" />
+      <workItem from="1733408866360" duration="6450000" />
+      <workItem from="1733418007021" duration="1037000" />
+      <workItem from="1733472385043" duration="9311000" />
+      <workItem from="1733534891138" duration="6923000" />
+      <workItem from="1733561242621" duration="5611000" />
+      <workItem from="1733644888056" duration="12024000" />
+      <workItem from="1733728966695" duration="4126000" />
+      <workItem from="1734343239810" duration="9000" />
+      <workItem from="1734343265907" duration="10223000" />
+      <workItem from="1734446630589" duration="3060000" />
+      <workItem from="1735063036338" duration="2070000" />
+      <workItem from="1735136223977" duration="597000" />
+      <workItem from="1735234840290" duration="1925000" />
+      <workItem from="1735319804535" duration="939000" />
+      <workItem from="1735445245771" duration="2013000" />
+      <workItem from="1735478934913" duration="9640000" />
+      <workItem from="1735580080272" duration="6306000" />
+      <workItem from="1735756041122" duration="2683000" />
+      <workItem from="1735842816199" duration="3824000" />
+      <workItem from="1737656466972" duration="1010000" />
+      <workItem from="1740664949003" duration="10589000" />
+      <workItem from="1741253057265" duration="4355000" />
+      <workItem from="1741374603171" duration="1337000" />
+      <workItem from="1741850737116" duration="617000" />
+      <workItem from="1743573906747" duration="5465000" />
+      <workItem from="1744007882494" duration="3042000" />
+      <workItem from="1744020247109" duration="4093000" />
+      <workItem from="1744260556587" duration="1202000" />
+      <workItem from="1745044312295" duration="2797000" />
+      <workItem from="1745991172112" duration="10795000" />
+      <workItem from="1746080533795" duration="2236000" />
+      <workItem from="1746437577079" duration="3867000" />
+      <workItem from="1747204698262" duration="5124000" />
+      <workItem from="1747655536114" duration="11136000" />
+      <workItem from="1749540451523" duration="1310000" />
+      <workItem from="1749541774863" duration="471000" />
+      <workItem from="1749542261520" duration="428000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
