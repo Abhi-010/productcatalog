@@ -19,7 +19,7 @@ public interface ProductService {
 
     GenericProductDto updateProductById(GenericProductDto genericProductDto,String id) throws NotFoundException;
 
-    int getProductCountWith(String categoryName, long id);
+    int getProductCountWith(String categoryName, String id);
 
     List<GenericProductDto> getProductByCategory(String categoryName) throws NotFoundException;
 }

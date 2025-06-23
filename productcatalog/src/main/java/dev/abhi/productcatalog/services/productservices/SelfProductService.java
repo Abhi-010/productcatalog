@@ -136,8 +136,9 @@ public class SelfProductService implements ProductService {
     }
 
     @Override
-    public int getProductCountWith(String categoryName, long id) {
-        return 0;
+    public int getProductCountWith(String categoryName, String id) {
+        UUID uuid = UUID.fromString(id);
+        return productRepository.getProductByCategoryId(uuid).size();
     }
 
     @Override

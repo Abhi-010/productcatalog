@@ -68,7 +68,7 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
-    public int getProductCountWith(String categoryName, long id) {
+    public int getProductCountWith(String categoryName, String id) {
         List<GenericProductDto> genericProductDtoList = getAllProducts();
 
         genericProductDtoList.removeIf(genericProductDto -> !genericProductDto.getCategory().equals(categoryName));

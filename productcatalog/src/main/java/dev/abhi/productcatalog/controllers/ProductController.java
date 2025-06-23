@@ -64,7 +64,7 @@ import java.util.UUID;
 
     @GetMapping("/count")
     public String getProductCountWith(@RequestParam(value = "categoryName") String categoryName,
-                                   @RequestParam(value="id",required = false,defaultValue = "5") long id){
+                                   @RequestParam(value="id",required = false,defaultValue = "5") String id){
         return "The number of Products with Category Name : " + categoryName +
                 " and id : " + id + " is " + productService.getProductCountWith(categoryName,id);
     }
