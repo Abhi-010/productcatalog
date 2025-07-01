@@ -1,6 +1,5 @@
-package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
+package dev.abhi.productcatalog.thirdpartyclients.FakeStore.product;
 
-import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
@@ -29,24 +28,28 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
     @Value("${fakeStore.url}")
     private String baseRequestUrl;
 
-    public FakeStoreProductServiceClient(RestTemplateBuilder restTemplateBuilder){
+    private final FeignClient feignClient ;
+
+    public FakeStoreProductServiceClient(RestTemplateBuilder restTemplateBuilder,FeignClient feignClient){
         this.restTemplateBuilder = restTemplateBuilder ;
+        this.feignClient = feignClient ;
     }
 
     @Override
     public FakeStoreProductDto getProductByID(Long id) throws NotFoundException {
-        RestTemplate restTemplate = restTemplateBuilder.build() ;
-        String requestUrl = baseRequestUrl + "{id}";
-
-        ResponseEntity<FakeStoreProductDto> response =
-                restTemplate.getForEntity(requestUrl, FakeStoreProductDto.class,id) ;
-
-        FakeStoreProductDto fakeStoreProductDto = response.getBody() ;
-
-        if(fakeStoreProductDto == null){
-            throw new NotFoundException("Product with id " + id + " doesn't exist");
-        }
-        return fakeStoreProductDto ;
+        return feignClient.getProductById(id) ;
+//        RestTemplate restTemplate = restTemplateBuilder.build() ;
+//        String requestUrl = baseRequestUrl + "{id}";
+//
+//        ResponseEntity<FakeStoreProductDto> response =
+//                restTemplate.getForEntity(requestUrl, FakeStoreProductDto.class,id) ;
+//
+//        FakeStoreProductDto fakeStoreProductDto = response.getBody() ;
+//
+//        if(fakeStoreProductDto == null){
+//            throw new NotFoundException("Product with id " + id + " doesn't exist");
+//        }
+//        return fakeStoreProductDto ;
     }
 
     @Override

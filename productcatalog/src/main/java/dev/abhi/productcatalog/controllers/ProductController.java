@@ -35,6 +35,20 @@ import java.util.UUID;
         }
     }
 
+    /*
+    We have added one more method(getProductById) for Long id. using for FakeStore API call.
+     */
+    @GetMapping("/fake/{id}")
+    public GenericProductDto getProductById(@PathVariable("id") Long id) {
+        try{
+            return productService.getProductByID(id);
+        }
+        catch (NotFoundException notFoundException){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "Product with id " + id + " doesn't exist", notFoundException);
+        }
+    }
+
     @GetMapping
     public List<GenericProductDto> getAllProducts(){
         return productService.getAllProducts() ;

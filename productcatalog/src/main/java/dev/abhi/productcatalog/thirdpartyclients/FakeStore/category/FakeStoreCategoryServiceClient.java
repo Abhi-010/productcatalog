@@ -1,8 +1,6 @@
-package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
+package dev.abhi.productcatalog.thirdpartyclients.FakeStore.category;
 
-import dev.abhi.productcatalog.dtos.CategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
-import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 @Service
-public class FakeStoreCategoryServiceClient implements ThirdPartyCategoryServiceClient{
+public class FakeStoreCategoryServiceClient implements ThirdPartyCategoryServiceClient {
 
     private final RestTemplateBuilder restTemplateBuilder ;
 

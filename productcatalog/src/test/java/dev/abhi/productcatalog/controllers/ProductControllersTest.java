@@ -3,10 +3,8 @@ package dev.abhi.productcatalog.controllers;
 
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
-import dev.abhi.productcatalog.models.Product;
 import dev.abhi.productcatalog.services.productservices.ProductService;
-import dev.abhi.productcatalog.thirdpartyclients.FakeStore.FakeStoreProductServiceClient;
-import org.junit.jupiter.api.DisplayName;
+import dev.abhi.productcatalog.thirdpartyclients.FakeStore.product.FakeStoreProductServiceClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

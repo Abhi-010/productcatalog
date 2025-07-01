@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Service
 //@Qualifier("selfProductService")
-@Primary
+//@Primary
 public class SelfProductService implements ProductService {
 
     private final ProductRepository productRepository ;
@@ -42,6 +42,11 @@ public class SelfProductService implements ProductService {
             throw new NotFoundException("Product is not available");
         }
         return convertToGenericProductDto(product.get());
+    }
+
+    @Override
+    public GenericProductDto getProductByID(Long id) throws NotFoundException {
+        return null;
     }
 
     @Override

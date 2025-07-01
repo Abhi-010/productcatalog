@@ -1,6 +1,5 @@
-package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
+package dev.abhi.productcatalog.thirdpartyclients.FakeStore.product;
 
-import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;

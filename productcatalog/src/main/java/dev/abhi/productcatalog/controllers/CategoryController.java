@@ -26,5 +26,4 @@ public class CategoryController {
     public CategoryDto createCategory(@RequestBody CategoryRequestBody categoryRequestBody){
         return categoryService.createCategory(categoryRequestBody.getNewCategory());
     }
-
 }

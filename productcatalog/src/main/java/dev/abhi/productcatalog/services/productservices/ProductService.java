@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public interface ProductService {
     GenericProductDto getProductByID(UUID id) throws NotFoundException;
+    GenericProductDto getProductByID(Long id) throws NotFoundException;
 
     GenericProductDto createProduct(GenericProductDto genericProductDto) ;
 

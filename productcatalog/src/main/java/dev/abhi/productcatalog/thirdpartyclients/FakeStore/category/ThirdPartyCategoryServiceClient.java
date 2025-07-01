@@ -1,8 +1,6 @@
-package dev.abhi.productcatalog.thirdpartyclients.FakeStore;
+package dev.abhi.productcatalog.thirdpartyclients.FakeStore.category;
 
-import dev.abhi.productcatalog.dtos.CategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
-import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

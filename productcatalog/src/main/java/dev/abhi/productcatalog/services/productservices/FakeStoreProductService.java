@@ -1,10 +1,9 @@
 package dev.abhi.productcatalog.services.productservices;
 
-import dev.abhi.productcatalog.dtos.FakeStoreCategoryDto;
 import dev.abhi.productcatalog.dtos.FakeStoreProductDto;
 import dev.abhi.productcatalog.dtos.GenericProductDto;
 import dev.abhi.productcatalog.exceptions.NotFoundException;
-import dev.abhi.productcatalog.thirdpartyclients.FakeStore.ThirdPartyProductServiceClient;
+import dev.abhi.productcatalog.thirdpartyclients.FakeStore.product.ThirdPartyProductServiceClient;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,7 @@ import java.util.UUID;
 
 @Service
 //@Qualifier("fakeProductService")
-//@Primary
+@Primary
 public class FakeStoreProductService implements ProductService{
 
     private final ThirdPartyProductServiceClient thirdPartyProductServiceClient ;
@@ -23,6 +22,7 @@ public class FakeStoreProductService implements ProductService{
         this.thirdPartyProductServiceClient = thirdPartyProductServiceClient;
     }
 
+    @Override
     public GenericProductDto getProductByID(Long id) throws NotFoundException {
         return convertToGenericProductDto(thirdPartyProductServiceClient.getProductByID(id)) ;
     }

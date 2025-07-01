@@ -12,6 +12,8 @@ public class Product extends BaseModel{
     private String description ;
     private String image ;
 
+    @Column(name = "currency", columnDefinition = "SMALLINT")
+    @Enumerated(EnumType.ORDINAL)
     private Currency currency ;
 
     private double price ;
