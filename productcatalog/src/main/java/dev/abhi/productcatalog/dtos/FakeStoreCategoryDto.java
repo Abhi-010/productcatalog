@@ -11,4 +11,8 @@ public class FakeStoreCategoryDto {
      public FakeStoreCategoryDto(String name) {
           this.name = name;
      }
+
+     public String getName() {
+          return name;
+     }
 }

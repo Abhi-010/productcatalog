@@ -25,7 +25,7 @@ public class FakeStoreCategoryService implements CategoryService{
 
         List<CategoryDto> categoryDtoList = new ArrayList<>();
 
-        for(var obj : fakeStoreCategoryDtoList){
+        for(FakeStoreCategoryDto obj : fakeStoreCategoryDtoList){
 
             CategoryDto categoryDto = new CategoryDto() ;
             categoryDto.setName(obj.getName());
