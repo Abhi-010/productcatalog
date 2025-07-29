@@ -19,6 +19,8 @@ public class SpringSecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests( (authorize) -> authorize
                                 .requestMatchers("/products").hasAuthority("ROLE_USER")
+                                .requestMatchers("/categories").permitAll()
+                                .requestMatchers("/actuator/*").permitAll()
                                 .anyRequest().authenticated()
                         //.requestMatchers("/auth/signup","/auth/login","/auth/roles").permitAll()
                 ).oauth2ResourceServer(oauth2 -> oauth2
