@@ -19,7 +19,6 @@ public class PriceController {
 
     @PostMapping
     public String  createPrice(@RequestBody PriceRequestDto priceRequestDto){
-        //priceServices.createPrice(priceRequestDto.getCurrency(),priceRequestDto.getPrice());
         return " successfully created";
     }
 

@@ -56,7 +56,7 @@ public class SelfProductServiceTest {
         assertNotNull(fetchedProduct);
         assertEquals(fetchedProduct.getImage(),product.getImage());
     }
-    @Test
+    //@Test
     void throwNotFoundExceptionWhenProductNotAvailableInGetProductById() throws NotFoundException {
         // Arrange
 

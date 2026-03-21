@@ -21,25 +21,13 @@ import java.util.UUID;
  public class ProductController {
 
     private final ProductService productService ;
-    private final TokenValidator tokenValidator ;
 
-    public ProductController(ProductService productService, TokenValidator tokenValidator){
+    public ProductController(ProductService productService){
         this.productService = productService ;
-        this.tokenValidator = tokenValidator ;
     }
-
-    /*
-    New way of Handling Exception is by ResponseExceptionStatus Class
-     */
     @GetMapping("{id}")
-    public GenericProductDto getProductById(@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken
-            ,@PathVariable("id") String id) {
+    public GenericProductDto getProductById(@PathVariable("id") String id) {
         try{
-            System.out.println("Auth token :: " + authToken);
-
-//            Optional<JwtObject> jwtObjectOptional =
-//                    tokenValidator.validateToken(1L,authToken);
-
             return productService.getProductByID(UUID.fromString(id));
         }
         catch (NotFoundException notFoundException){
@@ -49,11 +37,7 @@ import java.util.UUID;
     }
 
     @GetMapping
-    public List<GenericProductDto> getAllProducts(){//@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken){
-
-        //System.out.println("auth toke ::: " + authToken);
-        System.out.println("hey this is for testing purpose ::::::::::::::::::::::");
-
+    public List<GenericProductDto> getAllProducts(){
         return productService.getAllProducts() ;
     }
 
@@ -85,6 +69,5 @@ import java.util.UUID;
     public List<GenericProductDto> getProductByCategory(@PathVariable("categoryName") String categoryName) throws NotFoundException {
         return productService.getProductByCategory(categoryName);
     }
-
 
 }
