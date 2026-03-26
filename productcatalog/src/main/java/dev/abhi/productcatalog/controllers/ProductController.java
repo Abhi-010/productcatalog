@@ -41,6 +41,11 @@ import java.util.UUID;
         return productService.getAllProducts() ;
     }
 
+    @GetMapping("/hello-test")
+    public String hello()
+    {
+        return "hello Abhishek";
+    }
     @DeleteMapping("{id}")
     public ResponseEntity<GenericProductDto> deleteProductById(@PathVariable("id") String uuid) throws NotFoundException {
         GenericProductDto genericProductDto =  productService.deleteProductById(uuid) ;
