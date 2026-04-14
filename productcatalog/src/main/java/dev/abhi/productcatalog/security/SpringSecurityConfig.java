@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.List;
@@ -49,20 +48,20 @@ public class SpringSecurityConfig {
 //        return http.build();
 //    }
 
-    @Bean
-    public JwtAuthenticationConverter jwtAuthenticationConverter() {
-        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
-
-        converter.setJwtGrantedAuthoritiesConverter(jwt -> {
-            List<Map<String, String>> roles = jwt.getClaim("roles");
-
-            return roles.stream()
-                    .map(role -> new SimpleGrantedAuthority(role.get("roleName")))
-                    .collect(Collectors.toList());
-        });
-
-        return converter;
-    }
+//    @Bean
+//    public JwtAuthenticationConverter jwtAuthenticationConverter() {
+//        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+//
+//        converter.setJwtGrantedAuthoritiesConverter(jwt -> {
+//            List<Map<String, String>> roles = jwt.getClaim("roles");
+//
+//            return roles.stream()
+//                    .map(role -> new SimpleGrantedAuthority(role.get("roleName")))
+//                    .collect(Collectors.toList());
+//        });
+//
+//        return converter;
+//    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http,
@@ -72,6 +71,7 @@ public class SpringSecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/products/**").hasRole("USER")
+                        .requestMatchers("/categories/**").hasRole("USER")
                         .anyRequest().permitAll()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
